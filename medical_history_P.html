@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+     <meta charset="UTF-8">
+    <title>Title</title>
+        <link rel="stylesheet" href="/static/Style.css">
+<style>
+    /* Chrome, Safari, Edge, Opera */
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+          -webkit-appearance: none;
+          margin: 0;
+        }
+
+        /* Firefox */
+        input[type=number] {
+          -moz-appearance: textfield;
+        }
+        .table{
+            width: 60%;
+        }
+.button {
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.button1 {background-color: #4CAF50;} /* Green */
+
+</style>
+</head>
+<body>
+    <table class="table">
+       <tr>
+           {% for header in headings %}
+           <th>{{ header }}</th>
+           {% endfor %}
+       </tr>
+        {% for row in data %}
+        <tr>
+            {% for x in row %}
+            <td>{{ x }}</td>
+            {% endfor %}
+        </tr>
+        {% endfor %}
+    </table>
+    <div class="form">
+        <form action="{{ url_for('P_medical_history') }}" method="POST" class="form">
+            <p>
+             <button type="submit" name="P_medical_history" value="P_medical_history"> Show medical history </button>
+            </p>
+        </form>
+    </div>
+
+</body>
+</html>

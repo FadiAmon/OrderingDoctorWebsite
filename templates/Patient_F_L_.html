@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+        <link rel="stylesheet" href="/static/Style_All_.css">
+    <style>
+        th,
+        td {
+            padding: 15px;
+            background-color: rgba(255,255,255,0.2);
+            color: #fff;
+            text-align: center;
+        }
+
+        th {
+            text-align: center;
+        }
+        button{
+            width: 90px;
+        }
+        /* Chrome, Safari, Edge, Opera */
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+          -webkit-appearance: none;
+          margin: 0;
+        }
+
+        /* Firefox */
+        input[type=number] {
+          -moz-appearance: textfield;
+        }
+    </style>
+</head>
+<body>
+<header class="header" >
+        <nav class="navbar">
+            <a href=Patient>Home</a>
+            <a href=Patient_P>Change Pass</a>
+            <a href=Patient_F_L>Change F/L Name</a>
+            <a href=Patient_E>Change Email</a>
+            <a href=Order_Doctor>Order Doctor</a>
+            <a href=Orders_History>Oredrs History</a>
+            <a href=Cancel_Order>Cancel Order</a>
+            <a href=Main>Logout</a>
+        </nav>
+    </header>
+    <table class="table">
+       <tr>
+           {% for header in headings %}
+           <th>{{ header }}</th>
+           {% endfor %}
+       </tr>
+        {% for row in data %}
+        <tr>
+            {% for x in row %}
+            <td>{{ x }}</td>
+            {% endfor %}
+        </tr>
+        {% endfor %}
+    </table>
+    <div class="form">
+        <form action=Patient_F_L method="POST" class="form">
+            <label for="first_name"></label><input type="text" name="first_name" id="first_name" placeholder="First Name" autocomplete="off">
+            <label for="last_name"></label><input type="text" name="last_name" id="last_name" placeholder="Last Name" autocomplete="off">
+            <p>
+                <button type="submit" name="Change" value="Change"> Change </button>
+            </p>
+        </form>
+        {% if message %}
+            <p>{{ message }}</p>
+        {% endif %}
+    </div>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.button {
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.button1 {background-color: #4CAF50;} /* Green */
+
+</style>
+</head>
+<body>
+
+    <div class="form">
+        <form action="{{ url_for('Change_status') }}" method="POST" class="form">
+            <p>
+             <button type="submit" name="Change_status" value="Change_Status"> Change Status </button>
+            </p>
+        </form>
+    </div>
+
+</body>
+</html>

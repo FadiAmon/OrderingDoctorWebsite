@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+{% extends 'layout.html' %}
+{% block body %}
+  <h3 class='text-center text-muted mb-3'>Requests Page</h3>
+  <p class='text-lift'><a href='{{url_for("sum_of_tr")}}' class='btn btn-success '>+Patient Requisite</a></p>
+ <p class='text-right'><a href='{{url_for("show_sum_tr")}}' class='btn btn-success '>+Patient Requisite</a></p>
+  <table class='table table-bordered'>
+    <thead>
+      <th>SN</th>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Email</th>
+      <th>Approval Status</th>
+      <th>Delete</th>
+      <th>Set An Appointment</th>
+
+    </thead>
+    <tbody>
+      {% for row in datas %}
+        <tr>
+          <td>{{loop.index}}</td>
+          <td>{{row.first_name}}</td>
+          <td>{{row.last_name}}</td>
+          <td>{{row.email_p}}</td>
+          <td>{{row.CONTACT}}</td>
+
+          <td><a href='{{url_for("delete_user",uid=row.UID)}}' class='btn btn-danger' onclick='return confirm("Are You Sure")'>Delete</a></td>
+          <td><a href='{{url_for("approval_user",uid=row.UID)}}'   id="myDIV" class='btn btn-primary' onclick='return confirm("Are You Sure you want to set an appointment?? ") ' >Click Here</a></td>
+
+        </tr>
+      {%endfor%}
+    </tbody>
+  </table>
+{% endblock %}

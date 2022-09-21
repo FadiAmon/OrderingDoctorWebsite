@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+            <link rel="stylesheet" href="/static/Style_All_.css">
+    <style>
+        th,
+        td {
+            padding: 15px;
+            background-color: rgba(255,255,255,0.2);
+            color: #fff;
+            text-align: center;
+        }
+
+        th {
+            text-align: center;
+        }
+        button{
+            width: 90px;
+        }
+        /* Chrome, Safari, Edge, Opera */
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+          -webkit-appearance: none;
+          margin: 0;
+        }
+
+        /* Firefox */
+        input[type=number] {
+          -moz-appearance: textfield;
+        }
+    </style>
+</head>
+<body>
+<header class="header" >
+        <nav class="navbar">
+            <a href=Admin>Home</a>
+            <a href=New_Doctor>Users Add/Delete</a>
+            <a href=View_orders>View Orders</a>
+            <a href=Orders_Count>Orders Count</a>
+            <a href=Main>Logout</a>
+        </nav>
+    </header>
+    <table class="table">
+       <tr>
+           {% for header in headings %}
+           <th>{{ header }}</th>
+           {% endfor %}
+       </tr>
+        {% for row in data %}
+        <tr>
+            {% for x in row %}
+            <td>{{ x }}</td>
+            {% endfor %}
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

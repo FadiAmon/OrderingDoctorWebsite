@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Slide Navbar</title>
+	<link rel="stylesheet" href="/static/Style_Login_.css"/>
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap" rel="stylesheet">
+        <style>
+        /* Chrome, Safari, Edge, Opera */
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+          -webkit-appearance: none;
+          margin: 0;
+        }
+
+        /* Firefox */
+        input[type=number] {
+          -moz-appearance: textfield;
+        }
+        .other {background-color: #e7e7e7; color: black;}
+    </style>
+</head>
+<body>
+<header class="header" >
+        <nav class="navbar">
+            <a href=Main>Home</a>
+            <a href=Login>Login</a>
+			<a href=About>About</a>
+        </nav>
+    </header>
+	<div class="main">
+		<input type="checkbox" id="chk" aria-hidden="true">
+
+			<div class="signup">
+				<form action=Login method="post">
+					<label for="chk" aria-hidden="true">Sign up</label>
+					<input type="text" name="first_name" id="first_name" placeholder="First name" required="" autocomplete="off">
+					<input type="text" name="last_name" id="last_name" placeholder="Last name" required="" autocomplete="off">
+					<input type="email" name="email_" id="email_" placeholder="Email" required="" autocomplete="off">
+                    <input list="d_p1" name="d_p" placeholder="Choose" required="" autocomplete="off">
+                    <datalist id="d_p1">
+                        <option value="Doctor">
+                        <option value="Patient">
+                    </datalist>
+					<input list="address" name="address_" placeholder="Address" required="" autocomplete="off">
+                    <datalist id="address">
+                        <option value="Acre">
+                        <option value="Afula">
+						<option value="Arad">
+                        <option value="Arraba">
+						<option value="Ashdod">
+                        <option value="Ashkelon">
+						<option value="Baqa al-Gharbiyye">
+                        <option value="Bat Yam">
+						<option value="Beersheba">
+                        <option value="Beit She'an">
+						<option value="Beit Shemesh">
+                        <option value="Bnei Brak">
+						<option value="Dimona">
+                        <option value="Eilat">
+						<option value="El'ad">
+                        <option value="Giv'at Shmuel">
+						<option value="Givatayim">
+                        <option value="Hadera">
+						<option value="Haifa">
+                        <option value="Herzliya">
+						<option value="Hod HaSharon">
+                        <option value="Holon">
+						<option value="Jerusalem">
+                        <option value="Kafr Qasim">
+						<option value="Karmiel">
+                        <option value="Kfar Saba">
+						<option value="Kfar Yona">
+                        <option value="Kiryat Ata">
+						<option value="Kiryat Bialik">
+                        <option value="Kiryat Gat">
+						<option value="Kiryat Malakhi">
+                        <option value="Kiryat Motzkin">
+						<option value="Kiryat Ono">
+                        <option value="Kiryat Shmona">
+						<option value="Kiryat Yam">
+                        <option value="Lod">
+						<option value="Ma'alot-Tarshiha">
+                        <option value="Migdal HaEmek">
+						<option value="Modi'in-Maccabim-Re'ut">
+                        <option value="Nahariya">
+						<option value="Nazareth">
+                        <option value="Nesher">
+						<option value="Ness Ziona">
+                        <option value="Netanya">
+						<option value="Netivot">
+                        <option value="Nof HaGalil">
+						<option value="Ofakim">
+                        <option value="Or Akiva">
+						<option value="Or Yehuda">
+                        <option value="Petah Tikva">
+						<option value="Qalansawe">
+                        <option value="Ra'anana">
+						<option value="Rahat">
+                        <option value="Ramat Gan">
+						<option value="Ramat HaSharon">
+                        <option value="Rehovot">
+						<option value="Rishon LeZion">
+                        <option value="Rosh HaAyin">
+						<option value="Safed">
+                        <option value="Sakhnin">
+						<option value="Sderot">
+                        <option value="Shefa-'Amr">
+						<option value="Tamra">
+                        <option value="Tayibe">
+						<option value="Tel Aviv-Yafo">
+                        <option value="Tiberias">
+						<option value="Tira">
+                        <option value="Tirat Carmel">
+						<option value="Umm al-Fahm">
+                        <option value="Yavne">
+						<option value="Yehud-Monosson">
+                        <option value="Yokneam Illit">
+                    </datalist>
+					<input type="password" name="pswd_" id="pswd_" placeholder="Password" required="" autocomplete="off">
+					<button type="submit" name="sign_up" value="sign_up">Sign up</button>
+				</form>
+				<div class="message">
+				{% if message_ %}
+					<p>{{ message_ }}</p>
+				{% endif %}
+				</div>
+			</div>
+
+			<div class="login">
+				<form action=Login method="post">
+					<label for="chk" aria-hidden="true">Login</label>
+					<input type="email" name="email" id="email" placeholder="Email" required="" autocomplete="off">
+					<input type="password" name="pswd" id="pswd" placeholder="Password" required="" autocomplete="off">
+					<button type="submit" name="login" value="login">Login</button>
+				</form>
+				<div class="message">
+				{% if message %}
+					<p>{{ message }}</p>
+				{% endif %}
+				</div>
+			</div>
+	</div>
+</body>
+</html>

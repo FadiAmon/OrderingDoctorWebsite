@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <link rel="stylesheet" href="/static/Main_D_.css">
+
+    <script type="text/javascript">
+        function preventBack(){
+            window.history.forward();
+        }
+
+        setTimeout("preventBack()", 0);
+
+        window.onunload = function () { null };
+    </script>
+
+</head>
+<body>
+    <nav class="navMenu">
+        <a href=Doctor_P>Change Pass</a>
+        <a href=Doctor_F_L>Change F/L Name</a>
+        <a href=Doctor_E>Change Email</a>
+        <a href=Order_Doc>Order Doctor</a>
+        <a href=Change_Specialty>Change Specialty</a>
+        <a href=Change_status>Change Status</a>
+        <a href=Main>Logout</a>
+        <div class="dot"></div>
+    </nav>
+  </body>
+</html>

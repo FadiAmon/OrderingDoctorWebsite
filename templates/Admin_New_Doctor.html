@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+            <link rel="stylesheet" href="/static/Style_All_.css">
+    <style>
+        th,
+        td {
+            padding: 15px;
+            background-color: rgba(255,255,255,0.2);
+            color: #fff;
+            text-align: center;
+        }
+
+        th {
+            text-align: center;
+        }
+        button{
+            width: 90px;
+        }
+        /* Chrome, Safari, Edge, Opera */
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+          -webkit-appearance: none;
+          margin: 0;
+        }
+
+        /* Firefox */
+        input[type=number] {
+          -moz-appearance: textfield;
+        }
+    </style>
+</head>
+<body>
+<header class="header" >
+        <nav class="navbar">
+            <a href=Admin>Home</a>
+            <a href=New_Doctor>Users Add/Delete</a>
+            <a href=View_orders>View Orders</a>
+            <a href=Orders_Count>Orders Count</a>
+            <a href=Main>Logout</a>
+        </nav>
+    </header>
+    <table class="table">
+       <tr>
+           {% for header in headings %}
+           <th>{{ header }}</th>
+           {% endfor %}
+       </tr>
+        {% for row in data %}
+        <tr>
+            {% for x in row %}
+            <td>{{ x }}</td>
+            {% endfor %}
+        </tr>
+        {% endfor %}
+    </table>
+    <div class="form">
+        <form action=New_Doctor method="POST" class="form">
+            <label for="first_name"></label><input type="text" name="first_name" id="first_name" placeholder="First Name" autocomplete="off">
+            <label for="last_name"></label><input type="text" name="last_name" id="last_name" placeholder="Last Name" autocomplete="off">
+            <label for="email"></label><input type="email" name="email" id="email" placeholder="Email" autocomplete="off">
+            <input list="address" name="address_" placeholder="Address" required="" autocomplete="off">
+            <datalist id="address">
+                        <option value="Acre">
+                        <option value="Afula">
+						<option value="Arad">
+                        <option value="Arraba">
+						<option value="Ashdod">
+                        <option value="Ashkelon">
+						<option value="Baqa al-Gharbiyye">
+                        <option value="Bat Yam">
+						<option value="Beersheba">
+                        <option value="Beit She'an">
+						<option value="Beit Shemesh">
+                        <option value="Bnei Brak">
+						<option value="Dimona">
+                        <option value="Eilat">
+						<option value="El'ad">
+                        <option value="Giv'at Shmuel">
+						<option value="Givatayim">
+                        <option value="Hadera">
+						<option value="Haifa">
+                        <option value="Herzliya">
+						<option value="Hod HaSharon">
+                        <option value="Holon">
+						<option value="Jerusalem">
+                        <option value="Kafr Qasim">
+						<option value="Karmiel">
+                        <option value="Kfar Saba">
+						<option value="Kfar Yona">
+                        <option value="Kiryat Ata">
+						<option value="Kiryat Bialik">
+                        <option value="Kiryat Gat">
+						<option value="Kiryat Malakhi">
+                        <option value="Kiryat Motzkin">
+						<option value="Kiryat Ono">
+                        <option value="Kiryat Shmona">
+						<option value="Kiryat Yam">
+                        <option value="Lod">
+						<option value="Ma'alot-Tarshiha">
+                        <option value="Migdal HaEmek">
+						<option value="Modi'in-Maccabim-Re'ut">
+                        <option value="Nahariya">
+						<option value="Nazareth">
+                        <option value="Nesher">
+						<option value="Ness Ziona">
+                        <option value="Netanya">
+						<option value="Netivot">
+                        <option value="Nof HaGalil">
+						<option value="Ofakim">
+                        <option value="Or Akiva">
+						<option value="Or Yehuda">
+                        <option value="Petah Tikva">
+						<option value="Qalansawe">
+                        <option value="Ra'anana">
+						<option value="Rahat">
+                        <option value="Ramat Gan">
+						<option value="Ramat HaSharon">
+                        <option value="Rehovot">
+						<option value="Rishon LeZion">
+                        <option value="Rosh HaAyin">
+						<option value="Safed">
+                        <option value="Sakhnin">
+						<option value="Sderot">
+                        <option value="Shefa-'Amr">
+						<option value="Tamra">
+                        <option value="Tayibe">
+						<option value="Tel Aviv-Yafo">
+                        <option value="Tiberias">
+						<option value="Tira">
+                        <option value="Tirat Carmel">
+						<option value="Umm al-Fahm">
+                        <option value="Yavne">
+						<option value="Yehud-Monosson">
+                        <option value="Yokneam Illit">
+                    </datalist>
+            <label for="pass"></label><input type="text" name="pass" id="pass" placeholder="Password" autocomplete="off">
+            <label>D/P: Doctor</label>
+            <button type="submit" name="Add" value="Add"> Add </button>
+            <button type="submit" name="Delete" value="Delete"> Delete </button>
+        </form>
+        {% if message %}
+            <p>{{ message }}</p>
+        {% endif %}
+    </div>
+</body>
+</html>

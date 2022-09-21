@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <link rel="stylesheet" href="/static/Main_A_.css">
+
+    <script type="text/javascript">
+        function preventBack(){
+            window.history.forward();
+        }
+
+        setTimeout("preventBack()", 0);
+
+        window.onunload = function () { null };
+    </script>
+
+</head>
+<body>
+    <nav class="navMenu">
+        <a href=New_Doctor>Users Add/Delete</a>
+        <a href=View_orders>View Orders</a>
+        <a href=Orders_Count>Orders Count</a>
+        <a href=Main>Logout</a>
+        <div class="dot"></div>
+    </nav>
+  </body>
+</html>

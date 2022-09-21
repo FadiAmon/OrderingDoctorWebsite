@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+        <link rel="stylesheet" href="/static/Style_Admin.css"/>
+    <style>
+        /* Chrome, Safari, Edge, Opera */
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+          -webkit-appearance: none;
+          margin: 0;
+        }
+
+        /* Firefox */
+        input[type=number] {
+          -moz-appearance: textfield;
+        }
+    </style>
+    <script type="text/javascript">
+        function preventBack(){
+            window.history.forward();
+        }
+
+        setTimeout("preventBack()", 0);
+
+        window.onunload = function () { null };
+    </script>
+</head>
+<body>
+    <div class="wrapper">
+        <div>
+            Change_pass<br>
+            <a href=Doctor_P>
+            <img src="{{url_for('send_image', filename = 'istockphoto-943955978-612x612.jpg')}}" width="200" height="200">
+            </a>
+            <br>
+        </div>
+        <div>
+            Change_F/L_Name<br>
+            <a href=Doctor_F_L>
+            <img src="{{url_for('send_image', filename = 'download.png')}}" width="200" height="200">
+            </a>
+            <br>
+        </div>
+        <div>
+            Change_Email<br>
+            <a href=Doctor_E>
+            <img src="{{url_for('send_image', filename = 'email-icon-isolated-on-white-background-vector-19239974.jpg')}}" width="200" height="200">
+            </a>
+            <br>
+        </div>
+        <div>
+            Order<br>
+            <a href=Order_Doc>
+            <img src="{{url_for('send_image', filename = 'doctor-icon-on-a-white-background-vector-20428530.jpg')}}" width="200" height="200">
+            </a>
+            <br>
+        </div>
+        <div>
+            Logout<br>
+            <a href=Login>
+            <img src="{{url_for('send_image', filename = 'pngfind.com-logout-button-png-3396821.png')}}" width="200" height="200">
+            </a>
+            <br>
+        </div>
+    </div>
+
+</body>
+</html>

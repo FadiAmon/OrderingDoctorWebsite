@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+     <meta charset="UTF-8">
+    <title>Title</title>
+        <link rel="stylesheet" href="/static/Style.css">
+<style>
+    /* Chrome, Safari, Edge, Opera */
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+          -webkit-appearance: none;
+          margin: 0;
+        }
+
+        /* Firefox */
+        input[type=number] {
+          -moz-appearance: textfield;
+        }
+        .table{
+            width: 60%;
+        }
+.button {
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.button1 {background-color: #4CAF50;} /* Green */
+
+</style>
+</head>
+<body>
+
+    <div class="form">
+        <form action="{{ url_for('add_note') }}" method="POST" class="form">
+            <label for="chk" aria-hidden="true">Enter notes:</label>
+            <input type="text" name="note" id="note">
+            <p>
+             <button type="submit" name="add_note" value="add_note"> Add note </button>
+            </p>
+        </form>
+    </div>
+
+</body>
+</html>

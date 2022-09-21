@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+{% extends 'layout.html' %}
+{% block body %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+</head>
+<body>
+<h3>treatment summary</h3><hr>
+<tbody>
+      {% for row in datas %}
+      <td>{{row.SUM}}</td>
+
+       {%endfor%}
+    </tbody>
+</body>
+</html>
+{% endblock %}

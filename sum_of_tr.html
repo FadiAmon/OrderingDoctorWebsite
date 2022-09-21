@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<tbody>
+      {% for row in datas %}
+      <td></td>
+       <div class='form-group'>
+             <a href='{{url_for("edit_user2",uid=row.UID)}}' class='btn btn-primary' onclick='return confirm("456")'>write the treatment summary</a></td>
+       </div>
+       {%endfor%}
+    </tbody>
+</body>
+</html>
